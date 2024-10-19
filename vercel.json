@@ -22,10 +22,6 @@
         "dest": "/static/$1"
       },
       {
-        "src": "/post-image-files/(.*)",
-        "dest": "/uploads/$1"
-      },
-      {
         "src": "/(.*)",
         "dest": "my_site/wsgi.py"
       }
