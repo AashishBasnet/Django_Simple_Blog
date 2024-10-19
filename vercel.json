@@ -2,7 +2,7 @@
   {
     "builds": [
       {
-        "src": "my-site/wsgi.py",
+        "src": "/wsgi.py",
         "use": "@vercel/python"
       }
     ],
@@ -17,7 +17,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "my-site/wsgi.py"
+        "dest": "/wsgi.py"
       }
     ]
   }
