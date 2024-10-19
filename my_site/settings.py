@@ -14,7 +14,7 @@ from pathlib import Path
 # from os import getenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+from os import getenv
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -23,11 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-xk0tcvfjxiz7$c@wanu52fl#=h3r#z&e335mzw#qz08pg5av0^"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = getenv("IS_DEVELOPMENT", True)
 
 ALLOWED_HOSTS = [
-    '.vercel.app'    
+    getenv("APP_HOST")
 ]
+
 
 
 # Application definition

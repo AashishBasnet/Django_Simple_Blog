@@ -1,20 +1,24 @@
-{
-    "builds": [{
-        "src": "my_site/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9", "buildCommand": "python manage.py collectstatic --noinput && python manage.py migrate" }
-    }],
 
-
+  {
+    "builds": [
+      {
+        "src": "my-site/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
     "routes": [
-        {
-          "src": "/static/(.*)",
-          "dest": "/static/$1"
-        }
-      ]
-}
-
-
-  
-  
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": "/post-image-files/(.*)",
+        "dest": "/uploads/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "my-site/wsgi.py"
+      }
+    ]
+  }
   
