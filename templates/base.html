@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title%} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static "base.css" %}">
+    {% block css_files%}{% endblock %}
+  </head>
+  <body>
+ <header>
+    <div id="main-navigation">
+      <h1><a href ="{% url "main-page" %}">My Blog</a></h1>
+          <nav>
+            <h1><a href ="{% url "read-later" %}">Stored Posts</a></h1>
+           <h1><a href ="{% url "posts" %}">All Posts</a></h1>
+          </nav>
+      </div>
+  </header> 
+    {% block body%} {% endblock %}
+    {% comment %} <script src="index.js"></script> {% endcomment %}
+  </body>
+</html>
+
+
