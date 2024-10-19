@@ -27,7 +27,7 @@ DEBUG = False
 
 # Allowed hosts
 ALLOWED_HOSTS = [
-    '.vercel.app' 
+    '.vercel.app' , '.now.sh'
 ]
 
 
